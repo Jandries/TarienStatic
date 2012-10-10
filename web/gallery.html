@@ -3,6 +3,7 @@
 <!DOCTYPE html >
 <html>
 <head>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
     <style type="text/css">
       ul.images {
         margin: 0;
@@ -18,6 +19,13 @@
         width: 150px;
         height: 150px;
       }
+      #view {
+      width: 450px;
+	height: 450px;
+	background-image: url(image/background.jpg);
+	background-size: contain;
+	background-repeat:no-repeat;
+}
     </style>
     <script type="text/javascript">
 function setMainImageContent(source, desc){
@@ -36,29 +44,40 @@ function setMainImageContent(source, desc){
 		<div align="right">
 			<table >
 			<tr>
-
 				<td valign="top" align="right"><div style="width:150px;"><h2 >Subject:</h2><span id="desc">Alphabet - hierdie is 'n baie lang description wat gaan kyk of die ding kan line wrap en limit tot by 150px</span></div></td>
-				<td><img id="mainImage" height="450px" src="resources/Artwork/Alphabet.jpg">
+				<td><div id="view" ></div><!-- <img id="mainImage" height="450px" src="resources/Artwork/Alphabet.jpg"> --></td>
 			</tr>
 			</table>
 		</div>
+		<span id="result">Hellooooo</span>
 
 			<ul class="images">
-<li><img src="resources/Artwork/Alphabet.jpg" height="150px" onclick="setMainImageContent('resources/Artwork/Alphabet.jpg', 'Alphabet')"/></li>
-<li><img src="resources/Artwork/Beerlabel.jpg" height="150px" onclick="setMainImageContent('resources/Artwork/Beerlabel.jpg', 'Beerlabel')"/></li>
-<li><img src="resources/Artwork/Book cover.jpg" height="150px" onclick="setMainImageContent('resources/Artwork/Book cover.jpg', 'Book cover')"/></li>
-<li><img src="resources/Artwork/Cards.jpg" height="150px" onclick="setMainImageContent('resources/Artwork/Cards.jpg', 'Cards')"/></li>
-<li><img src="resources/Artwork/Draw1.jpg" height="150px" onclick="setMainImageContent('resources/Artwork/Draw1.jpg', 'Draw1')"/></li>
-<li><img src="resources/Artwork/Draw2.jpg" height="150px" onclick="setMainImageContent('resources/Artwork/Draw2.jpg', 'Draw2')"/></li>
-<li><img src="resources/Artwork/Draw3.jpg" height="150px" onclick="setMainImageContent('resources/Artwork/Draw3.jpg', 'Draw3')"/></li>
-<li><img src="resources/Artwork/Evan.jpg" height="150px" onclick="setMainImageContent('resources/Artwork/Evan.jpg', 'Evan')"/></li>
-<li><img src="resources/Artwork/KidzParty.jpg" height="150px" onclick="setMainImageContent('resources/Artwork/KidzParty.jpg', 'KidzParty')"/></li>
-<li><img src="resources/Artwork/KidzParty2.jpg" height="150px" onclick="setMainImageContent('resources/Artwork/KidzParty2.jpg', 'KidzParty2')"/></li>
-<li><img src="resources/Artwork/Matt painting.jpg" height="150px" onclick="setMainImageContent('resources/Artwork/Matt painting.jpg', 'Matt painting')"/></li>
-<li><img src="resources/Artwork/YouthCover.jpg" height="150px" onclick="setMainImageContent('resources/Artwork/YouthCover.jpg', 'YouthCover')"/></li>
+<li><img class="list" src="resources/Artwork/Alphabet.jpg" height="150px" desc="Alphabet"/></li>
+<li><img class="list" src="resources/Artwork/Beerlabel.jpg" height="150px" desc="Beer Label" /></li>
+<li><img class="list" src="resources/Artwork/BookCover.jpg" height="150px" desc="Book Cover" /></li>
+<li><img class="list" src="resources/Artwork/Cards.jpg" height="150px" desc="Cards" /></li>
+<li><img class="list" src="resources/Artwork/Draw1.jpg" height="150px" desc="Draw1" /></li>
+<li><img class="list" src="resources/Artwork/Draw2.jpg" height="150px" desc="Draw2" /></li>
+<li><img class="list" src="resources/Artwork/Draw3.jpg" height="150px" desc="Draw3" /></li>
+<li><img class="list" src="resources/Artwork/Evan.jpg" height="150px" desc="Evan" /></li>
+<li><img class="list" src="resources/Artwork/KidzParty.jpg" height="150px" desc="Kindz Party" /></li>
+<li><img class="list" src="resources/Artwork/KidzParty2.jpg" height="150px" desc="Kidz Party 2" /></li>
+<li><img class="list" src="resources/Artwork/MattPainting.jpg" height="150px" desc="Matt painting" /></li>
+<li><img class="list" src="resources/Artwork/YouthCover.jpg" height="150px" desc="Youth Cover" /></li>
 
 			</ul>
 		</div>
 	</div>
+<script>
+$(".list").click(function () {
+// 	var color = $(this).attr("src");
+// 	  $("#result").html("blah");
+	var src = $(this).attr("src");
+	var desc = $(this).attr("desc");
+	$("#desc").html(desc);
+	$("#view").css("background-image", " url(" + src + ")")
+  
+});
+</script>
 </body>
 </html>

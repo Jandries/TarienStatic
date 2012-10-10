@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Tarien van der Merwe</title>
+<!-- <link rel="stylesheet" type="text/css" href="stylesheet/style.css" /> -->
+<style>
+html {
+	background: url(image/background.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='image/background.jpg',
+		sizingMethod='scale' );
+	-ms-filter:
+		"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='image/background.jpg', sizingMethod='scale')";
+}
+</style>
+<script src="js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		
+		$("body").click(function(event){
+			$('.body').fadeTo('slow', 0.3, function() {
+				$(this).css('background-image', 'url('')');
+			}).delay(1000).fadeTo('slow', 1);
+			/*  event.preventDefault(); 
+		   $(this).hide("slow"); */
+		 });
+		
+		
+	});
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+/*---- HEADER -----*/
+#header {
+	width: 900px;
+	height: 200px;
+	position: relative;
+}
+
+#logo {
+	cursor: hand;
+	cursor: pointer;
+	position: relative;
+	top: -80px;
+}
+
+#lineName {
+	position: relative;
+	top: 60px;
+}

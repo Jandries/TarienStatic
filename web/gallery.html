@@ -5,27 +5,52 @@
 <head>
 <!-- 	<script src="http://code.jquery.com/jquery-latest.js"></script> -->
 <script src="js/jquery-1.8.2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/header.css" />
+<link rel="stylesheet" type="text/css" href="css/general.css" />
 <style type="text/css">
-/*---- HEADER -----*/
-#header {
-	width: 900px;
-	height: 200px;
-	position: relative;
-}
 
-#logo {
+ul.galleryItems{
 	cursor: hand;
 	cursor: pointer;
-	position: relative;
-	top: -80px;
+	margin: 0;
+	padding: 0;
+	white-space: nowrap;
+	width: 750px;
+	overflow-x: auto;
+	background-color: #ddd;
+}
+ul.galleryItems li{
+	margin-right: 10px;
+	display: inline;
+	width: 150px;
+	height: 150px;
 }
 
-#lineName {
-	position: relative;
-	top: 60px;
+#view{
+	height: 400px;
+	width: 800px;
 }
 
-ul.images {
+#galleryItemDescription{
+	float:left;
+}
+
+#galleryItemImage{
+	height: 100%;
+	width: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+/*
+#galleryItemImage{
+	width: 450px;
+	height: 450px;
+	background-image: url(image/background.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+}*/
+
+/* ul.images {
 	margin: 0;
 	padding: 0;
 	white-space: nowrap;
@@ -41,13 +66,11 @@ ul.images li {
 	height: 150px;
 }
 
-#view {
-	width: 450px;
-	height: 450px;
-	background-image: url(image/background.jpg);
-	background-size: contain;
-	background-repeat: no-repeat;
-}
+ 
+.list{
+	height: 150px
+}*/
+
 </style>
 <script type="text/javascript">
 	function setMainImageContent(source, desc) {
@@ -71,62 +94,160 @@ ul.images li {
 		</div>
 
 		<div style="width: 900px;">
-			<div align="right">
-				<table>
+			<div id="view">
+				<table style="width:100%;height:100%">
 					<tr>
-						<td valign="top" align="right"><div style="width: 150px;">
-								<h2>Subject:</h2>
-								<span id="desc">Alphabet - hierdie is 'n baie lang
-									description wat gaan kyk of die ding kan line wrap en limit tot
-									by 150px</span>
-							</div></td>
-						<td><div id="view"></div> <!-- <img id="mainImage" height="450px" src="resources/Artwork/Alphabet.jpg"> --></td>
+						<td style="width:200px;height: 10px"><div id="galleryItemSubject"><h2>Alphabet</h2></div></td>
+						<td rowspan="2"><div id="galleryItemImage" style="background-image: url('resources/Artwork/Alphabet.jpg');"/></div></td>
+					</tr>
+					<tr align="right">
+						<td style="text-align:right;vertical-align:top;">
+							<div id="galleryItemDescription">This was designed as part of my BA
+							Graphic design course in October 2011. This font made out of pencil
+							sharpenings is called Tsash.The name comes from the combination
+							&#8217trash&#8217 & &#8217sash&#8217 and shows how pure trash can became something
+							meaningful</div>
+						</td>
 					</tr>
 				</table>
 			</div>
-
-			<ul class="images">
-				<li><img class="list" src="resources/Artwork/Alphabet.jpg"
-					height="150px" desc="Alphabet" /></li>
-				<li><img class="list" src="resources/Artwork/Beerlabel.jpg"
-					height="150px" desc="Beer Label" /></li>
-				<li><img class="list" src="resources/Artwork/BookCover.jpg"
-					height="150px" desc="Book Cover" /></li>
-				<li><img class="list" src="resources/Artwork/Cards.jpg"
-					height="150px" desc="Cards" /></li>
-				<li><img class="list" src="resources/Artwork/Draw1.jpg"
-					height="150px" desc="Draw1" /></li>
-				<li><img class="list" src="resources/Artwork/Draw2.jpg"
-					height="150px" desc="Draw2" /></li>
-				<li><img class="list" src="resources/Artwork/Draw3.jpg"
-					height="150px" desc="Draw3" /></li>
-				<li><img class="list" src="resources/Artwork/Evan.jpg"
-					height="150px" desc="Evan" /></li>
-				<li><img class="list" src="resources/Artwork/KidzParty.jpg"
-					height="150px" desc="Kindz Party" /></li>
-				<li><img class="list" src="resources/Artwork/KidzParty2.jpg"
-					height="150px" desc="Kidz Party 2" /></li>
-				<li><img class="list" src="resources/Artwork/MattPainting.jpg"
-					height="150px" desc="Matt painting" /></li>
-				<li><img class="list" src="resources/Artwork/YouthCover.jpg"
-					height="150px" desc="Youth Cover" /></li>
-
+			
+			<ul class="galleryItems">
 			</ul>
 		</div>
 	</div>
+
+	<div style="visibility: hidden;height: 0px;width: 0px;margin: 0px;display: none;">
+		<ul id="galleryItemIndex">
+			<li>
+				<div class="subject">Alphabet</div>
+				<div class="description">This was designed as part of my BA
+					Graphic design course in October 2011. This font made out of pencil
+					sharpenings is called Tsash.The name comes from the combination
+					&#8217trash&#8217 & &#8217sash&#8217 and shows how pure trash can became something
+					meaningful</div>
+				<div class="thumbnail">resources/png_thumbnails/Thumbnails-07.png</div>
+				<div class="image">resources/Artwork/Alphabet.jpg</div>
+			</li>
+			<li>
+				<div class="subject">Beerlabel</div>
+				<div class="description">This was designed as part of my BA
+					Graphic design course in August 2010. This is the labels of three
+					types of beer within the same brand. The identity is strong while
+					it is also very easy to distinguish and identify the variety.</div>
+				<div class="thumbnail">resources/png_thumbnails/Thumbnails-11.png</div>
+				<div class="image">resources/Artwork/Beerlabel.jpg</div>
+			</li>
+			<li>
+				<div class="subject">Book Cover</div>
+				<div class="description">This was designed as part of my BA
+					Graphic design course in April 2011. It&#8217s the cover of a Suspense
+					book which moves around four objects: A shoe lace, a tea bag, some
+					matches and a torn-out piece out of a telephone book</div>
+				<div class="thumbnail">resources/png_thumbnails/Thumbnails-08.png</div>
+				<div class="image">resources/Artwork/BookCover.jpg</div>
+			</li>
+			<li>
+				<div class="subject">Orchestra</div>
+				<div class="description">This was designed as part of my BA Graphic design course in October 2010. Poster design; Coming up: Orchestra performance.</div>
+				<div class="thumbnail">resources/png_thumbnails/Thumbnails-12.png</div>
+				<div class="image">resources/Artwork/Cards.jpg</div>
+			</li>
+			<li>
+				<div class="subject">Drawing Crown</div>
+				<div class="description">This was designed as part of my BA
+					Graphic design course in August 2011. It&#8217s a pencil drawing of
+					symbolic opposites, purity and evil.</div>
+				<div class="thumbnail">resources/png_thumbnails/Thumbnails-02.png</div>
+				<div class="image">resources/Artwork/Draw1.jpg</div>
+			</li>
+			<li>
+				<div class="subject">Self Portrait</div>
+				<div class="description">This was designed as part of my BA
+					Graphic design course in July 2011. Pencil drawing: It’s a A2 size
+					self portrait in seven styles.</div>
+				<div class="thumbnail">resources/png_thumbnails/Thumbnails-03.png</div>
+				<div class="image">resources/Artwork/Draw2.jpg</div>
+			</li>
+			<li>
+				<div class="subject">Matts Painting</div>
+				<div class="description">This was designed as part of my BA
+					Graphic design course in September 2011. Matt painting; movie
+					poster.</div>
+				<div class="thumbnail">resources/png_thumbnails/Thumbnails-06.png</div>
+				<div class="image">resources/Artwork/MattPainting.jpg</div>
+			</li>
+			<li>
+				<div class="subject">Esher&#8217s</div>
+				<div class="description">This was designed as part of my BA
+					Graphic design course in May 2011. Pencil drawing: This is a copy
+					of Esher’s &#8217o-gota-de-rocio&#8217 A3 size</div>
+				<div class="thumbnail">resources/png_thumbnails/Thumbnails-01.png</div>
+				<div class="image">resources/Artwork/Draw3.jpg</div>
+			</li>
+			<li>
+				<div class="subject">Evan</div>
+				<div class="description">This was designed for a friend&#8217s
+					21&#8217st birthday in December 2011. A1 size photo collage.</div>
+				<div class="thumbnail">resources/png_thumbnails/Thumbnails-04.png</div>
+				<div class="image">resources/Artwork/Evan.jpg</div>
+			</li>
+			<li>
+				<div class="subject">Kindz Party</div>
+				<div class="description">Kindz Party</div>
+				<div class="thumbnail">resources/png_thumbnails/Thumbnails-10.png</div>
+				<div class="image">resources/Artwork/KidzParty.jpg</div>
+			</li>
+			<li>
+				<div class="subject">Kids Party two</div>
+				<div class="description">Kids Party two</div>
+				<div class="thumbnail">resources/png_thumbnails/Thumbnails-09.png</div>
+				<div class="image">resources/Artwork/KidzParty2.jpg</div>
+			</li>
+			<li>
+				<div class="subject">Youth Cover</div>
+				<div class="description">This was designed for Hillsong Cape
+					Town&#8217s Youth Worship team in August 2011. This is the front cover
+					of a mini booklet.</div>
+				<div class="thumbnail">resources/png_thumbnails/Thumbnails-05.png</div>
+				<div class="image">resources/Artwork/YouthCover.jpg</div>
+			</li>
+		</ul>
+	</div>
+	
 	<script>
 		$(function() {
+			function log(obj){
+				console.log(obj);
+			}
 
 			$(document).ready(function() {
+				populateGalleryItems();
 				setListeners();
 			});
 
+			function populateGalleryItems() {
+				$("ul#galleryItemIndex li").each(function(i){
+					var subject = $(this).find(".subject").html();
+					var description = $(this).find(".description").html();
+					var image = $(this).find(".image").html();
+					var thumbnail = $(this).find(".thumbnail").html();
+					var newListItem = "<li><img subject='" + subject + "' image='" + image + "' description='" + description + "' class='list' src='" + thumbnail + "'/></li>";
+					$("ul.galleryItems:last").append(newListItem);
+					log("gallery item added : " + subject + " ("+ thumbnail + ")");
+			 	});
+			}
+
 			function setListeners() {
-				$(".list").click(function() {
-					var src = $(this).attr("src");
-					var desc = $(this).attr("desc");
-					$("#desc").html(desc);
-					$("#view").css("background-image", " url(" + src + ")")
+				$(".list").click(function() { 
+					var subject = $(this).attr("subject");
+					var description = $(this).attr("description");
+					var image = $(this).attr("image");
+					
+					$("#galleryItemSubject").html("<h2>" + subject + "</h2>");
+					$("#galleryItemDescription").html(description);
+					$("#galleryItemImage").css("background-image", " url(" + image+ ")")
+					
 				});
 
 				$("#logo").click(function() {
@@ -135,18 +256,5 @@ ul.images li {
 			}
 		});
 	</script>
-
-<!-- 	<div style="visibility: hidden;"> -->
-<!-- 		<ul> -->
-<!-- 			<li id="first"> -->
-<!-- 				<div class="subject">SUbject</div> -->
-<!-- 				<div class="description">description</div> -->
-<!-- 			</li> -->
-<!-- 			<li id="second"> -->
-<!-- 				<div class="subject">SUbject2</div> -->
-<!-- 				<div class="description">description2</div> -->
-<!-- 			</li> -->
-<!-- 		</ul> -->
-<!-- 	</div> -->
 </body>
 </html>

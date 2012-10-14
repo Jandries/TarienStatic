@@ -5,24 +5,12 @@
 <head>
 <!-- 	<script src="http://code.jquery.com/jquery-latest.js"></script> -->
 <script src="js/jquery-1.8.2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/header.css" />
+<link rel="stylesheet" type="text/css" href="css/general.css" />
 <style type="text/css">
-/*---- HEADER -----*/
-#header {
-	width: 900px;
-	height: 200px;
-	position: relative;
-}
-
-#logo {
-	cursor: hand;
-	cursor: pointer;
-	position: relative;
-	top: -80px;
-}
-
-#lineName {
-	position: relative;
-	top: 60px;
+.icon{
+	width: 32px;
+	height: 32px;
 }
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -39,13 +27,17 @@
 				<img src="resources/png_buttons/Buttons-09.png" />
 			</div>
 		</div>
-
+		<h1>hello, here's my details</h1>
 		<table style="text-align: right;">
 			<tr>
 				<td><a
 					href="mailto:tarien.vdm@gmail.com?subject=tarien.co.za-hello"
 					target="_newtab">tarien.vdm@gmail.com</a></td>
-				<td><img src="resources/png_buttons/Buttons-01.png" /></td>
+				<td>
+					<img id="twitterButton" class="icon" src="resources/other/twitter.png" />
+					<img id="facebookButton" class="icon" src="resources/other/facebook-1.png" />
+					<img id="linkedinButton" class="icon" src="resources/other/linkedin.png" />
+				</td>
 			</tr>
 			<tr>
 				<td>cell: 082 847 6885</td>
@@ -56,9 +48,12 @@
 				<td></td>
 			</tr>
 		</table>
-
 	</div>
-
+	
+	<div align="right" style="bottom: 0px;width: 800px;">
+		<h1 style="color:#FF0080">do not stalk me!</h1>
+	</div>
+	
 	<script>
 		$(function() {
 
@@ -67,9 +62,31 @@
 			});
 
 			function setListeners() {
-
 				$("#logo").click(function() {
 					window.location = "index.html";
+				});
+				
+				$("#twitterButton").click(function (){
+					window.open("https://twitter.com/raTien_vdm", 
+							'twitter | Tarien van der Merwe', 
+							'window settings');
+					  return false;
+				});
+				$("#facebookButton").click(function (){
+					window.open("http://www.facebook.com/tarienv", 
+							'facebook | Tarien van der Merwe', 
+							'window settings');
+					  return false;
+				});
+				$("#linkedinButton").click(function (){
+					window.open("http://www.linkedin.com/pub/tarien-van-der-merwe/36/44/132", 
+							'Linked In | Tarien van der Merwe', 
+							'window settings');
+					  return false;
+				});
+				
+				$(".icon").click(function() {
+					
 				});
 			}
 		});

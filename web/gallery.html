@@ -1,83 +1,152 @@
 
-     
+
 <!DOCTYPE html >
 <html>
 <head>
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-    <style type="text/css">
-      ul.images {
-        margin: 0;
-        padding: 0;
-        white-space: nowrap;
-        width: 900px;
-        overflow-x: auto;
-        background-color: #ddd;
-      }
-      ul.images li {
-      	margin-right: 10px;
-        display: inline;
-        width: 150px;
-        height: 150px;
-      }
-      #view {
-		width: 450px;
-		height: 450px;
-		background-image: url(image/background.jpg);
-		background-size: contain;
-		background-repeat:no-repeat;
-	  }
-    </style>
-    <script type="text/javascript">
-		function setMainImageContent(source, desc){
-			document.getElementById('mainImage').setAttribute('src', source);
-			document.getElementById('desc').innerHTML=desc;
-		}
-    </script>
+<!-- 	<script src="http://code.jquery.com/jquery-latest.js"></script> -->
+<script src="js/jquery-1.8.2.min.js"></script>
+<style type="text/css">
+/*---- HEADER -----*/
+#header {
+	width: 900px;
+	height: 200px;
+	position: relative;
+}
+
+#logo {
+	cursor: hand;
+	cursor: pointer;
+	position: relative;
+	top: -80px;
+}
+
+#lineName {
+	position: relative;
+	top: 60px;
+}
+
+ul.images {
+	margin: 0;
+	padding: 0;
+	white-space: nowrap;
+	width: 900px;
+	overflow-x: auto;
+	background-color: #ddd;
+}
+
+ul.images li {
+	margin-right: 10px;
+	display: inline;
+	width: 150px;
+	height: 150px;
+}
+
+#view {
+	width: 450px;
+	height: 450px;
+	background-image: url(image/background.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+</style>
+<script type="text/javascript">
+	function setMainImageContent(source, desc) {
+		document.getElementById('mainImage').setAttribute('src', source);
+		document.getElementById('desc').innerHTML = desc;
+	}
+</script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Gallery</title>
 </head>
 <body>
-	<div align="center" >
+	<div align="center">
 
-		<img src="image/logo_gallery.png" /><br/>
-		<div style="width:900px;">
-		<div align="right">
-			<table >
-			<tr>
-				<td valign="top" align="right"><div style="width:150px;"><h2 >Subject:</h2><span id="desc">Alphabet - hierdie is 'n baie lang description wat gaan kyk of die ding kan line wrap en limit tot by 150px</span></div></td>
-				<td><div id="view" ></div><!-- <img id="mainImage" height="450px" src="resources/Artwork/Alphabet.jpg"> --></td>
-			</tr>
-			</table>
+		<div id="header">
+			<div id="lineName">
+				<img src="resources/png_buttons/Buttons-13.png" />
+			</div>
+			<div id="logo">
+				<img src="resources/png_buttons/Buttons-09.png" />
+			</div>
 		</div>
-		<span id="result">Hellooooo</span>
+
+		<div style="width: 900px;">
+			<div align="right">
+				<table>
+					<tr>
+						<td valign="top" align="right"><div style="width: 150px;">
+								<h2>Subject:</h2>
+								<span id="desc">Alphabet - hierdie is 'n baie lang
+									description wat gaan kyk of die ding kan line wrap en limit tot
+									by 150px</span>
+							</div></td>
+						<td><div id="view"></div> <!-- <img id="mainImage" height="450px" src="resources/Artwork/Alphabet.jpg"> --></td>
+					</tr>
+				</table>
+			</div>
 
 			<ul class="images">
-<li><img class="list" src="resources/Artwork/Alphabet.jpg" height="150px" desc="Alphabet"/></li>
-<li><img class="list" src="resources/Artwork/Beerlabel.jpg" height="150px" desc="Beer Label" /></li>
-<li><img class="list" src="resources/Artwork/BookCover.jpg" height="150px" desc="Book Cover" /></li>
-<li><img class="list" src="resources/Artwork/Cards.jpg" height="150px" desc="Cards" /></li>
-<li><img class="list" src="resources/Artwork/Draw1.jpg" height="150px" desc="Draw1" /></li>
-<li><img class="list" src="resources/Artwork/Draw2.jpg" height="150px" desc="Draw2" /></li>
-<li><img class="list" src="resources/Artwork/Draw3.jpg" height="150px" desc="Draw3" /></li>
-<li><img class="list" src="resources/Artwork/Evan.jpg" height="150px" desc="Evan" /></li>
-<li><img class="list" src="resources/Artwork/KidzParty.jpg" height="150px" desc="Kindz Party" /></li>
-<li><img class="list" src="resources/Artwork/KidzParty2.jpg" height="150px" desc="Kidz Party 2" /></li>
-<li><img class="list" src="resources/Artwork/MattPainting.jpg" height="150px" desc="Matt painting" /></li>
-<li><img class="list" src="resources/Artwork/YouthCover.jpg" height="150px" desc="Youth Cover" /></li>
+				<li><img class="list" src="resources/Artwork/Alphabet.jpg"
+					height="150px" desc="Alphabet" /></li>
+				<li><img class="list" src="resources/Artwork/Beerlabel.jpg"
+					height="150px" desc="Beer Label" /></li>
+				<li><img class="list" src="resources/Artwork/BookCover.jpg"
+					height="150px" desc="Book Cover" /></li>
+				<li><img class="list" src="resources/Artwork/Cards.jpg"
+					height="150px" desc="Cards" /></li>
+				<li><img class="list" src="resources/Artwork/Draw1.jpg"
+					height="150px" desc="Draw1" /></li>
+				<li><img class="list" src="resources/Artwork/Draw2.jpg"
+					height="150px" desc="Draw2" /></li>
+				<li><img class="list" src="resources/Artwork/Draw3.jpg"
+					height="150px" desc="Draw3" /></li>
+				<li><img class="list" src="resources/Artwork/Evan.jpg"
+					height="150px" desc="Evan" /></li>
+				<li><img class="list" src="resources/Artwork/KidzParty.jpg"
+					height="150px" desc="Kindz Party" /></li>
+				<li><img class="list" src="resources/Artwork/KidzParty2.jpg"
+					height="150px" desc="Kidz Party 2" /></li>
+				<li><img class="list" src="resources/Artwork/MattPainting.jpg"
+					height="150px" desc="Matt painting" /></li>
+				<li><img class="list" src="resources/Artwork/YouthCover.jpg"
+					height="150px" desc="Youth Cover" /></li>
 
 			</ul>
 		</div>
 	</div>
-<script>
-$(".list").click(function () {
-// 	var color = $(this).attr("src");
-// 	  $("#result").html("blah");
-	var src = $(this).attr("src");
-	var desc = $(this).attr("desc");
-	$("#desc").html(desc);
-	$("#view").css("background-image", " url(" + src + ")")
-  
-});
-</script>
+	<script>
+		$(function() {
+
+			$(document).ready(function() {
+				setListeners();
+			});
+
+			function setListeners() {
+				$(".list").click(function() {
+					var src = $(this).attr("src");
+					var desc = $(this).attr("desc");
+					$("#desc").html(desc);
+					$("#view").css("background-image", " url(" + src + ")")
+				});
+
+				$("#logo").click(function() {
+					window.location = "index.html";
+				});
+			}
+		});
+	</script>
+
+<!-- 	<div style="visibility: hidden;"> -->
+<!-- 		<ul> -->
+<!-- 			<li id="first"> -->
+<!-- 				<div class="subject">SUbject</div> -->
+<!-- 				<div class="description">description</div> -->
+<!-- 			</li> -->
+<!-- 			<li id="second"> -->
+<!-- 				<div class="subject">SUbject2</div> -->
+<!-- 				<div class="description">description2</div> -->
+<!-- 			</li> -->
+<!-- 		</ul> -->
+<!-- 	</div> -->
 </body>
 </html>

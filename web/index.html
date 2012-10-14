@@ -3,8 +3,25 @@
 <!DOCTYPE html >
 <html>
 <head>
-<script src="http://code.jquery.com/jquery-latest.js"></script>
+<!-- 	<script src="http://code.jquery.com/jquery-latest.js"></script> -->
+	<script src="js/jquery-1.8.2.min.js"></script>
     <style type="text/css">
+      #header{
+      	width: 900px;
+      	height: 200px;
+		position: relative;
+      }
+      #logo{
+      	cursor: hand;
+      	cursor: pointer;
+		position: relative;
+      	top:-80px;
+      }
+      #lineName{
+		position: relative;
+      	top:60px;
+      }
+      
       #tableDiv{
       	background-image: url("resources/png_buttons/Buttons-15.png");
       	width: 900px;
@@ -49,12 +66,16 @@
       }
     </style>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Gallery</title>
+<title>Home</title>
 </head>
 <body>
 	<div align="center" >
 
-		<img src="image/logo_gallery.png" /><br/>
+		<div id="header">
+			<div id="lineName"><img src="resources/png_buttons/Buttons-14.png"/></div>
+			<div id="logo"><img src="resources/png_buttons/Buttons-09.png" /></div>
+		</div>
+		<br/>
 		<div id="tableDiv">
 			<div class="menuItem" id="menuItem_suitcase"></div>
 			<div class="menuItem" id="menuItem_telefone"></div>
@@ -67,71 +88,106 @@
 	
 		$(document).ready(function() 
 		{
-			setMenuItemCss_suitcase_default();
-			setMenuItemCss_telefone_default();
-			setMenuItemCss_files_default();
-			setMenuItemCss_frame_default();
-			setListeners();
+			setMenuItemsDefault();
+			setHoverListeners();
+			setClickListeners();
 		});
 		
-		function setListeners(){
-			$("#menuItem_suitcase").hover(function () {
-				setMenuItemCss_suitcase_hover();
-			},function () {
+		function setClickListeners(){
+		$("#logo").click(function() {
+					window.location = "index.html";
+				});
+
+				$("#menuItem_suitcase").click(function() {
+					window.location = "gallery.html";
+				});
+
+				$("#menuItem_telefone").click(function() {
+					window.location = "contact.html";
+				});
+
+				$("#menuItem_files").click(function() {
+					//	 window.location = "gallery.html";
+				});
+
+				$("#menuItem_frame").click(function() {
+					window.location = "myLife.html";
+				});
+			}
+
+			function setHoverListeners() {
+				$("#menuItem_suitcase").hover(function() {
+					setMenuItemCss_suitcase_hover();
+				}, function() {
+					setMenuItemCss_suitcase_default();
+				});
+
+				$("#menuItem_telefone").hover(function() {
+					setMenuItemCss_telefone_hover();
+				}, function() {
+					setMenuItemCss_telefone_default();
+				});
+
+				$("#menuItem_files").hover(function() {
+					setMenuItemCss_files_hover();
+				}, function() {
+					setMenuItemCss_files_default();
+				});
+
+				$("#menuItem_frame").hover(function() {
+					setMenuItemCss_frame_hover();
+				}, function() {
+					setMenuItemCss_frame_default();
+				});
+			}
+
+			function setMenuItemsDefault() {
 				setMenuItemCss_suitcase_default();
-			});
-
-			$("#menuItem_telefone").hover(function () {
-				setMenuItemCss_telefone_hover();
-			},function () {
 				setMenuItemCss_telefone_default();
-			});
-
-			$("#menuItem_files").hover(function () {
-				setMenuItemCss_files_hover();
-			},function () {
 				setMenuItemCss_files_default();
-			});
-			
-			$("#menuItem_frame").hover(function () {
-				setMenuItemCss_frame_hover();
-			},function () {
 				setMenuItemCss_frame_default();
-			});
-		}
-		// ------------------
-		// suitcase 
-		function setMenuItemCss_suitcase_default(){
-			$("#menuItem_suitcase").css("background-image", "url('resources/png_buttons/Buttons-04.png')");
-		}
-		function setMenuItemCss_suitcase_hover(){
-			$("#menuItem_suitcase").css("background-image", "url('resources/png_buttons/Buttons-03.png')");
-		}
-		// ------------------
-		// telefone 
-		function setMenuItemCss_telefone_default(){
-			$("#menuItem_telefone").css("background-image", "url('resources/png_buttons/Buttons-02.png')");
-		}
-		function setMenuItemCss_telefone_hover(){
-			$("#menuItem_telefone").css("background-image", "url('resources/png_buttons/Buttons-01.png')");
-		}
-		// ------------------
-		// files 
-		function setMenuItemCss_files_default(){
-			$("#menuItem_files").css("background-image", "url('resources/png_buttons/Buttons-06.png')");
-		}
-		function setMenuItemCss_files_hover(){
-			$("#menuItem_files").css("background-image", "url('resources/png_buttons/Buttons-05.png')");
-		}
-		// ------------------
-		// frame 
-		function setMenuItemCss_frame_default(){
-			$("#menuItem_frame").css("background-image", "url('resources/png_buttons/Buttons-08.png')");
-		}
-		function setMenuItemCss_frame_hover(){
-			$("#menuItem_frame").css("background-image", "url('resources/png_buttons/Buttons-07.png')");
-		}
-	});
+			}
+			// ------------------
+			// suitcase 
+			function setMenuItemCss_suitcase_default() {
+				$("#menuItem_suitcase").css("background-image",
+						"url('resources/png_buttons/Buttons-04.png')");
+			}
+			function setMenuItemCss_suitcase_hover() {
+				$("#menuItem_suitcase").css("background-image",
+						"url('resources/png_buttons/Buttons-03.png')");
+			}
+			// ------------------
+			// telefone 
+			function setMenuItemCss_telefone_default() {
+				$("#menuItem_telefone").css("background-image",
+						"url('resources/png_buttons/Buttons-02.png')");
+			}
+			function setMenuItemCss_telefone_hover() {
+				$("#menuItem_telefone").css("background-image",
+						"url('resources/png_buttons/Buttons-01.png')");
+			}
+			// ------------------
+			// files 
+			function setMenuItemCss_files_default() {
+				$("#menuItem_files").css("background-image",
+						"url('resources/png_buttons/Buttons-06.png')");
+			}
+			function setMenuItemCss_files_hover() {
+				$("#menuItem_files").css("background-image",
+						"url('resources/png_buttons/Buttons-05.png')");
+			}
+			// ------------------
+			// frame 
+			function setMenuItemCss_frame_default() {
+				$("#menuItem_frame").css("background-image",
+						"url('resources/png_buttons/Buttons-08.png')");
+			}
+			function setMenuItemCss_frame_hover() {
+				$("#menuItem_frame").css("background-image",
+						"url('resources/png_buttons/Buttons-07.png')");
+			}
+		});
 	</script>
 </body>
 </html>

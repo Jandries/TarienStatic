@@ -1,0 +1,61 @@
+
+
+<!DOCTYPE html >
+<html>
+<head>
+<!-- 	<script src="http://code.jquery.com/jquery-latest.js"></script> -->
+<script src="js/jquery-1.8.2.min.js"></script>
+<style type="text/css">
+
+/*---- HEADER -----*/
+#header {
+	width: 900px;
+	height: 200px;
+	position: relative;
+}
+
+#logo {
+	cursor: hand;
+	cursor: pointer;
+	position: relative;
+	top: -80px;
+}
+
+#lineName {
+	position: relative;
+	top: 60px;
+}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>My Life</title>
+</head>
+<body>
+
+	<div align="center">
+		<div id="header">
+			<div id="lineName">
+				<img src="resources/png_buttons/Buttons-11.png" />
+			</div>
+			<div id="logo">
+				<img src="resources/png_buttons/Buttons-09.png" />
+			</div>
+		</div>
+	</div>
+
+	<script>
+		$(function() {
+
+			$(document).ready(function() {
+				setListeners();
+			});
+
+			function setListeners() {
+
+				$("#logo").click(function() {
+					window.location = "index.html";
+				});
+			}
+		});
+	</script>
+</body>
+</html>

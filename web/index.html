@@ -9,15 +9,13 @@
 	<link rel="stylesheet" type="text/css" href="css/general.css" />
 	<style type="text/css">
 	</style>
-	<script type="text/javascript" src="http://cdn.thewildernessdowntown.com/js/main-compressed.js"></script>
-
-	
     <style type="text/css">
       #tableDiv{
-      	background-image: url("resources/png_buttons/Buttons-15.png");
-      	width: 900px;
+      	width: 1188px;
       	height: 600px;
+      	background-image: url("resources/png_buttons/Table@bottom.png");
 		background-size: contain;
+		position: absolute;
 		background-repeat:no-repeat;
       }
       .menuItem{
@@ -25,35 +23,7 @@
       	cursor: pointer;
 		background-size: contain;
 		background-repeat: no-repeat;
-		position: relative;
-      }
-      
-      #menuItem_suitcase{
-      		width: 120px;
-      		height: 120px;
-			left: -235px;
-			top: 35px;
-      }
-      
-      #menuItem_telefone{
-     		width: 70px;
-     		height: 70px;
-			left: -105px;
-			top: -50px;
-      }
-      
-      #menuItem_files{
-			width: 120px;
-			height: 120px;
-			left: -20px;
-			top: -60px;
-      }
-      
-      #menuItem_frame{
-			width:120px;
-			height:120px;
-			right: -300px;
-			top: -265px;
+		position: absolute;
       }
     </style>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -63,19 +33,19 @@
 	<div align="center" >
 
 		<div id="header">
-			<div id="lineName"><img src="resources/png_buttons/Buttons-14.png"/></div>
-			<div id="logo"><img src="resources/png_buttons/Buttons-09.png" /></div>
+			<div id="lineName"><img src="resources/png_buttons/Home.png"/></div>
+			<div id="logo"><img src="resources/png_buttons/Logo_normal.png"/></div>
 		</div>
 		<br/>
 		<div id="tableDiv">
 			<div class="menuItem" id="menuItem_suitcase"></div>
 			<div class="menuItem" id="menuItem_telefone"></div>
-			<div class="menuItem" id="menuItem_files"></div>
+			<a href="resources/other/CV.pdf" download="resources/other/CV.pdf"><div class="menuItem" id="menuItem_files"></div></a>
 			<div class="menuItem" id="menuItem_frame"></div>
 		</div>
 	</div>
 	<script>
-	$(function() {
+$(function() {
 	
 		$(document).ready(function() 
 		{
@@ -86,99 +56,114 @@
 		
 		function setClickListeners(){
 		$("#logo").click(function() {
-					window.location = "index.html";
-				});
-
-				$("#menuItem_suitcase").click(function() {
-					window.location = "gallery.html";
-				});
-
-				$("#menuItem_telefone").click(function() {
-					window.location = "contact.html";
-				});
-
-				$("#menuItem_files").click(function() {
-					//	 window.location = "gallery.html";
-				});
-
-				$("#menuItem_frame").click(function() {
-					window.location = "myLife.html";
-				});
-			}
-
-			function setHoverListeners() {
-				$("#menuItem_suitcase").hover(function() {
-					setMenuItemCss_suitcase_hover();
-				}, function() {
-					setMenuItemCss_suitcase_default();
-				});
-
-				$("#menuItem_telefone").hover(function() {
-					setMenuItemCss_telefone_hover();
-				}, function() {
-					setMenuItemCss_telefone_default();
-				});
-
-				$("#menuItem_files").hover(function() {
-					setMenuItemCss_files_hover();
-				}, function() {
-					setMenuItemCss_files_default();
-				});
-
-				$("#menuItem_frame").hover(function() {
-					setMenuItemCss_frame_hover();
-				}, function() {
-					setMenuItemCss_frame_default();
-				});
-			}
-
-			function setMenuItemsDefault() {
-				setMenuItemCss_suitcase_default();
-				setMenuItemCss_telefone_default();
-				setMenuItemCss_files_default();
-				setMenuItemCss_frame_default();
-			}
-			// ------------------
-			// suitcase 
-			function setMenuItemCss_suitcase_default() {
-				$("#menuItem_suitcase").css("background-image",
-						"url('resources/png_buttons/Buttons-04.png')");
-			}
-			function setMenuItemCss_suitcase_hover() {
-				$("#menuItem_suitcase").css("background-image",
-						"url('resources/png_buttons/Buttons-03.png')");
-			}
-			// ------------------
-			// telefone 
-			function setMenuItemCss_telefone_default() {
-				$("#menuItem_telefone").css("background-image",
-						"url('resources/png_buttons/Buttons-02.png')");
-			}
-			function setMenuItemCss_telefone_hover() {
-				$("#menuItem_telefone").css("background-image",
-						"url('resources/png_buttons/Buttons-01.png')");
-			}
-			// ------------------
-			// files 
-			function setMenuItemCss_files_default() {
-				$("#menuItem_files").css("background-image",
-						"url('resources/png_buttons/Buttons-06.png')");
-			}
-			function setMenuItemCss_files_hover() {
-				$("#menuItem_files").css("background-image",
-						"url('resources/png_buttons/Buttons-05.png')");
-			}
-			// ------------------
-			// frame 
-			function setMenuItemCss_frame_default() {
-				$("#menuItem_frame").css("background-image",
-						"url('resources/png_buttons/Buttons-08.png')");
-			}
-			function setMenuItemCss_frame_hover() {
-				$("#menuItem_frame").css("background-image",
-						"url('resources/png_buttons/Buttons-07.png')");
-			}
+			window.location = "index.html";
 		});
+
+		$("#menuItem_suitcase").click(function() {
+			window.location = "gallery.html";
+		});
+
+		$("#menuItem_telefone").click(function() {
+			window.location = "contact.html";
+		});
+
+		$("#menuItem_files").click(function() {
+			// handled in the html code 
+		});
+
+		$("#menuItem_frame").click(function() {
+			window.location = "myLife.html";
+		});
+	}
+
+	function setHoverListeners() {
+		$("#menuItem_suitcase").hover(function() {
+			setMenuItemCss_suitcase_hover();
+		}, function() {
+			setMenuItemCss_suitcase_default();
+		});
+
+		$("#menuItem_telefone").hover(function() {
+			setMenuItemCss_telefone_hover();
+		}, function() {
+			setMenuItemCss_telefone_default();
+		});
+
+		$("#menuItem_files").hover(function() {
+			setMenuItemCss_files_hover();
+		}, function() {
+			setMenuItemCss_files_default();
+		});
+
+		$("#menuItem_frame").hover(function() {
+			setMenuItemCss_frame_hover();
+		}, function() {
+			setMenuItemCss_frame_default();
+		});
+	}
+
+	function setMenuItemsDefault() {
+		setMenuItemCss_suitcase_default();
+		setMenuItemCss_telefone_default();
+		setMenuItemCss_files_default();
+		setMenuItemCss_frame_default();
+	}
+	// ------------------
+	// suitcase 
+	function setElementDimensions(elem, width, height, left, top){
+		$(elem).css("width", width);
+		$(elem).css("height", height);
+		$(elem).css("left", left);
+		$(elem).css("top", top);
+	}
+	
+	function setMenuItemCss_suitcase_default() {
+		$("#menuItem_suitcase").css("background-image",
+				"url('resources/png_buttons/SCase_grey.png')");
+			setElementDimensions($("#menuItem_suitcase"), "121px", "159px", "181px", "62px");
+	}
+	function setMenuItemCss_suitcase_hover() {
+		$("#menuItem_suitcase").css("background-image",
+				"url('resources/png_buttons/SCase_hover.png')");
+		setElementDimensions($("#menuItem_suitcase"), "137px", "178px", "181px", "62px");
+	}
+	// ------------------
+	// telefone 
+	function setMenuItemCss_telefone_default() {
+		$("#menuItem_telefone").css("background-image",
+				"url('resources/png_buttons/Phone_grey.png')");
+		setElementDimensions($("#menuItem_telefone"), "74px", "74px", "395px", "132px");
+	}
+	function setMenuItemCss_telefone_hover() {
+		$("#menuItem_telefone").css("background-image",
+				"url('resources/png_buttons/Phone_hover.png')");
+		setElementDimensions($("#menuItem_telefone"), "86px", "83px", "395px", "132px");
+	}
+	// ------------------
+	// files 
+	function setMenuItemCss_files_default() {
+		$("#menuItem_files").css("background-image",
+				"url('resources/png_buttons/Papers_grey.png')");
+		setElementDimensions($("#menuItem_files"), "188px", "58px", "492px", "167px");
+	}
+	function setMenuItemCss_files_hover() {
+		$("#menuItem_files").css("background-image",
+				"url('resources/png_buttons/Papers_hover.png')");
+		setElementDimensions($("#menuItem_files"), "222px", "65px", "485px", "162px");
+	}
+	// ------------------
+	// frame 
+	function setMenuItemCss_frame_default() {
+		$("#menuItem_frame").css("background-image",
+				"url('resources/png_buttons/Photo_grey.png')");
+		setElementDimensions($("#menuItem_frame"), "74px", "125px", "894px", "98px");
+	}
+	function setMenuItemCss_frame_hover() {
+		$("#menuItem_frame").css("background-image",
+				"url('resources/png_buttons/Photo_hover.png')");
+		setElementDimensions($("#menuItem_frame"), "83px", "142px", "894px", "98px");
+	}
+});
 	</script>
 </body>
 <script type="text/javascript">

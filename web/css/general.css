@@ -1,7 +1,13 @@
 html{
+	width: 1188px;
+	height: 720px;
 	font-family: Arial;
 	color: gray;
 }
 h1{
 	font-weight: normal;
+}
+
+td{
+	padding: 10px
 }

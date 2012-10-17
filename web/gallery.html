@@ -5,6 +5,7 @@
 <head>
 <!-- 	<script src="http://code.jquery.com/jquery-latest.js"></script> -->
 <script src="js/jquery-1.8.2.min.js"></script>
+<script src="js/general.js"></script>
 <link rel="stylesheet" type="text/css" href="css/header.css" />
 <link rel="stylesheet" type="text/css" href="css/general.css" />
 <style type="text/css">
@@ -176,9 +177,6 @@ ul.galleryItems li{
 	
 	<script>
 		$(function() {
-			function log(obj){
-			//	console.log(obj);
-			}
 
 			$(document).ready(function() {
 				populateGalleryItems();
@@ -193,7 +191,6 @@ ul.galleryItems li{
 					var thumbnail = $(this).find(".thumbnail").html();
 					var newListItem = "<li><img subject='" + subject + "' image='" + image + "' description='" + description + "' class='list' src='" + thumbnail + "'/></li>";
 					$("ul.galleryItems:last").append(newListItem);
-					log("gallery item added : " + subject + " ("+ thumbnail + ")");
 			 	});
 			}
 			
@@ -207,17 +204,11 @@ ul.galleryItems li{
 				$("#galleryItemDescription").html(description);
 
 				$("#galleryItemImage").html("<img style='max-height:550px;max-width:637px;' src='" + image+ "'></img>");
-				//$("#galleryItemImage").css("background-image", " url(" + image+ ")")
-				
 			}
 
 			function setListeners() {
 				$(".list").click(function() {
 					clickedMenuItem($(this));
-				});
-
-				$("#logo").click(function() {
-					window.location = "index.html";
 				});
 			}
 		});

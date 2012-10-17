@@ -4,6 +4,7 @@
 <html>
 <head>
 	<script src="js/jquery-1.8.2.min.js"></script>
+	<script src="js/general.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/header.css" />
 	<link rel="stylesheet" type="text/css" href="css/general.css" />
 	<style type="text/css">
@@ -63,9 +64,6 @@ $(function() {
 		});
 		
 		function setClickListeners(){
-		$("#logo").click(function() {
-			window.location = "index.html";
-		});
 
 		$("#menuItem_suitcase").click(function() {
 			window.location = "gallery.html";
@@ -85,6 +83,7 @@ $(function() {
 	}
 
 	function setHoverListeners() {
+		
 		$("#menuItem_suitcase").hover(function() {
 			setMenuItemCss_suitcase_hover();
 		}, function() {
@@ -116,15 +115,15 @@ $(function() {
 		setMenuItemCss_files_default();
 		setMenuItemCss_frame_default();
 	}
-	// ------------------
-	// suitcase 
+
 	function setElementDimensions(elem, width, height, left, top){
 		$(elem).css("width", width);
 		$(elem).css("height", height);
 		$(elem).css("left", left);
 		$(elem).css("top", top);
 	}
-	
+	// ------------------
+	// suitcase 
 	function setMenuItemCss_suitcase_default() {
 		$("#menuItem_suitcase").css("background-image",
 				"url('resources/png_buttons/SCase_grey.png')");

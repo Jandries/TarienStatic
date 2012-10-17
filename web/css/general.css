@@ -6,10 +6,16 @@ html{
 }
 body{
 }
-h1{
+h1,h2{
 	font-weight: normal;
+	letter-spacing: 5px;
 }
 
 td{
 	padding: 10px;
+	padding-top: 0px;
+}
+
+.pink{
+	color: #ED1E79;
 }

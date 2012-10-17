@@ -41,12 +41,6 @@ ul.galleryItems li{
 	background-repeat: no-repeat;
 }
 </style>
-<script type="text/javascript">
-	function setMainImageContent(source, desc) {
-		document.getElementById('mainImage').setAttribute('src', source);
-		document.getElementById('desc').innerHTML = desc;
-	}
-</script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Gallery</title>
 </head>
@@ -63,7 +57,7 @@ ul.galleryItems li{
 				<table style="width:100%;height:100%">
 					<tr>
 						<td style="width:200px;height: 10px"><div id="galleryItemSubject"><h2>Alphabet</h2></div></td>
-						<td rowspan="2"><div id="galleryItemImage" style="background-image: url('resources/Artwork/Alphabet.jpg');"/></div></td>
+						<td rowspan="2"><div id="galleryItemImage"/><img style='max-height:550px;max-width:637px;' src='resources/Artwork/Alphabet.jpg'></img></div></td>
 					</tr>
 					<tr align="right">
 						<td style="text-align:right;vertical-align:top;">
@@ -146,7 +140,7 @@ ul.galleryItems li{
 				<div class="subject">Esher&#8217s</div>
 				<div class="description">This was designed as part of my BA
 					Graphic design course in May 2011. Pencil drawing: This is a copy
-					of Esher’s &#8217o-gota-de-rocio&#8217 A3 size</div>
+					of Esher&#8217s &#8217;o-gota-de-rocio&#8217; A3 size</div>
 				<div class="thumbnail">resources/png_thumbnails/Esher_draw.png</div>
 				<div class="image">resources/Artwork/Draw3.jpg</div>
 			</li>
@@ -202,17 +196,24 @@ ul.galleryItems li{
 					log("gallery item added : " + subject + " ("+ thumbnail + ")");
 			 	});
 			}
+			
+			function clickedMenuItem(obj){
+
+				var subject = $(obj).attr("subject");
+				var description = $(obj).attr("description");
+				var image = $(obj).attr("image");
+				
+				$("#galleryItemSubject").html("<h2>" + subject + "</h2>");
+				$("#galleryItemDescription").html(description);
+
+				$("#galleryItemImage").html("<img style='max-height:550px;max-width:637px;' src='" + image+ "'></img>");
+				//$("#galleryItemImage").css("background-image", " url(" + image+ ")")
+				
+			}
 
 			function setListeners() {
-				$(".list").click(function() { 
-					var subject = $(this).attr("subject");
-					var description = $(this).attr("description");
-					var image = $(this).attr("image");
-					
-					$("#galleryItemSubject").html("<h2>" + subject + "</h2>");
-					$("#galleryItemDescription").html(description);
-					$("#galleryItemImage").css("background-image", " url(" + image+ ")")
-					
+				$(".list").click(function() {
+					clickedMenuItem($(this));
 				});
 
 				$("#logo").click(function() {
